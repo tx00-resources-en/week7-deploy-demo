@@ -8,11 +8,9 @@ const {
   errorHandler,
 } = require("./middleware/customMiddleware");
 const connectDB = require("./config/db");
-const cors = require("cors");
 
 connectDB();
 
-// app.use(cors(corsOptions));
 app.use(express.json());
 app.use(express.static('view'))
 
@@ -21,7 +19,9 @@ app.use("/api/jobs", jobRouter);
 // Use the userRouter for all "/jobs" routes
 app.use("/api/users", userRouter);
 
+
 app.use(unknownEndpoint);
 app.use(errorHandler);
 
 module.exports = app;
+
