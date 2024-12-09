@@ -19,6 +19,9 @@ app.use("/api/jobs", jobRouter);
 // Use the userRouter for all "/jobs" routes
 app.use("/api/users", userRouter);
 
+app.get('*', (req, res) => {
+  res.sendFile(__dirname + '/view/index.html');
+});
 
 app.use(unknownEndpoint);
 app.use(errorHandler);
