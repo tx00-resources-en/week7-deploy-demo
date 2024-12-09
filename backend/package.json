@@ -10,6 +10,7 @@
     "build:view": "rm -rf view && cd ../frontend/ && npm run build && cp -r dist ../backend/view",  
     "push":"git add . && git commit -m new-build && git push",
     "deploy": "npm run build:view && npm run push", 
+
     "data:import": "node seeder",
     "data:destroy": "node seeder -d"
   },
