@@ -20,7 +20,6 @@ Please check this [reading](./temp/deployment.md).
 2. **Install Backend Dependencies**  
    Navigate to the `backend` directory and install the necessary dependencies:
    ```sh
-   cd backend
    npm install
    npm run dev
    ```
@@ -28,7 +27,6 @@ Please check this [reading](./temp/deployment.md).
 3. **Install Frontend Dependencies & Start the App**  
    Navigate to the `frontend` directory, install dependencies, and start the application:
    ```sh
-   cd frontend
    npm install
    npm run dev
    ```
