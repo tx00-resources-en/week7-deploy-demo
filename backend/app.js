@@ -19,13 +19,19 @@ app.use("/api/jobs", jobRouter);
 // Use the userRouter for all "/jobs" routes
 app.use("/api/users", userRouter);
 
-//Hello
-app.get('*', (req, res) => {
-  res.sendFile(__dirname + '/view/index.html');
+app.use('/api', unknownEndpoint);
+app.use(errorHandler);
+
+// Import Node's built‑in 'path' module to safely handle file and directory paths
+const path = require('path');
+// Serve all static files (HTML, CSS, JS, images, etc.) from the 'view' folder
+// Example: a request to '/index.html' will return 'view/index.html'
+app.use(express.static(path.join(__dirname, 'view')));
+
+app.use((req, res) => {
+  res.sendFile(path.join(__dirname, 'view', 'index.html'));
 });
 
-app.use(unknownEndpoint);
-app.use(errorHandler);
 
 module.exports = app;
 
